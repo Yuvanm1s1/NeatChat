@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import authRoutes from "./routes/auth.route.js"; // Importing the auth routes, make sure to put .js as type is module
 import { connectDB } from "./lib/db.js";
 const app= express();
+app.use(express.json()); // to get values from the body of the request
 dotenv.config()
 const PORT = process.env.PORT || 5001;
 //.use() is a method to mount middleware functions
