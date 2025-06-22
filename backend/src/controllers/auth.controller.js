@@ -35,6 +35,7 @@ export const signup = async(req, res) => {
       // This cookie gets sent to the browser, so on future requests the browser will automatically include the cookie, allowing your server to authenticate the user.
       generateToken(newUser._id, res);
       await newUser.save();
+      //returning the user data in the response
       res.status(201).json({
         _id: newUser._id,
         email: newUser.email,
@@ -73,7 +74,7 @@ export const login = async (req, res) => {
       });
     }
     generateToken(user._id, res);
-
+    //user data to be sent in the response
     res.status(200).json({
       _id: user._id,
       email: user.email,
@@ -87,7 +88,7 @@ export const login = async (req, res) => {
 //set the cookie to expire immediately, effectively logging the user out and value to an empty string
 export const logout = (req, res) => {
   try{
-    res.cookie("token", "", {
+    res.cookie("jwt", "", {
       maxAge:0 // Set the cookie to expire immediately
     });
     res.status(200).json({
@@ -130,7 +131,7 @@ export const updateProfile = async (req, res) => {
   }
 }
 
-//we will be calling this function when the page loads to check if the user is authenticated
+//we will be calling this function when the page loads to check if the user is authenticated and returns the user
 export const checkAuth = (req, res) => {
   try {
     res.status(200).json(req.user);
