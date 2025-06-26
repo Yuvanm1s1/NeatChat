@@ -67,6 +67,7 @@ export const getMessages = async(req, res) => {
 
 
 import axios from "axios";
+import { getReceiverSocketId,io } from "../lib/socket.js";
 export const sendMessages = async (req, res) => {
     console.log("sendMessages called");
     try {
@@ -117,7 +118,11 @@ export const sendMessages = async (req, res) => {
         }
 
         await newMessage.save();
-
+        const recieverSocketId = getReceiverSocketId(userToChatId);
+        if(recieverSocketId){
+            //io.emit broadcasts
+            io.to(recieverSocketId).emit("newMessage",newMessage);
+        }
         res.status(200).json(newMessage);
     } catch (error) {
         console.error("Error in sendMessages:", error);
