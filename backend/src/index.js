@@ -9,7 +9,7 @@ import cookieParser from "cookie-parser"; // Importing cookie-parser to handle c
 import messageRoutes from "./routes/message.route.js"; // Importing message routes, make sure to put .js as type is module
 import cors from "cors"; 
 const app= express();
-app.use(express.json()); // to get values from the body of the request
+app.use(express.json({ limit: '10mb' })); // to get values from the body of the request
 app.use(cookieParser()); // to parse cookies from the request headers
 app.use(cors({
     origin: "http://localhost:5173", // Allow requests from this origin which is the frontend
