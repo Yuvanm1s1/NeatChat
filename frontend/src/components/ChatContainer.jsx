@@ -26,7 +26,7 @@ const ChatContainer = () => {
 
     return () => unsubscribeFromMessages();
     // ➡️ This cleanup function is called when the component unmounts or the effect re-runs (like switching chats).
-  }, []);
+  }, [selectedUser._id, getMessages, subscribeToMessages, unsubscribeFromMessages]);
 
   useEffect(() => {
     if (messageEndRef.current && messages) {
