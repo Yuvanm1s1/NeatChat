@@ -4,10 +4,11 @@
 
 ---
 # How It Works (In Simple Terms)
--If a user sends a message with bad words, they are automatically censored (e.g., turned into ######).
--If a user sends a message that seems vulgar or toxic but doesn’t use any explicit words, it still detects it and responds with something like "⚠️ Vulgarity Detected".
--If a user sends an image containing NSFW content (like nudity) or violent scenes (like blood or gore), the image is blurred automatically to protect users.
--If the message or image is safe, it is sent and displayed as-is, unblurred and uncensored.
+
+- If a user sends a message with bad words, they are automatically censored (e.g., turned into ######).
+- If a user sends a message that seems vulgar or toxic but doesn’t use any explicit words, it still detects it and responds with something like "⚠️ Vulgarity Detected".
+- If a user sends an image containing NSFW content (like nudity) or violent scenes (like blood or gore), the image is blurred automatically to protect users.
+- If the message or image is safe, it is sent and displayed as-is, unblurred and uncensored.
 ---
 ## 🚀 Features
 
