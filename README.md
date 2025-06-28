@@ -3,7 +3,12 @@
 **NeatChat** is a modern real-time chat application that leverages AI-powered text and image moderation to maintain a safe and engaging environment for users. The platform combines scalable web technologies, WebSocket communication, and deep learning models to automatically filter inappropriate content in messages and images.
 
 ---
-
+# How It Works (In Simple Terms)
+-If a user sends a message with bad words, they are automatically censored (e.g., turned into ######).
+-If a user sends a message that seems vulgar or toxic but doesn’t use any explicit words, it still detects it and responds with something like "⚠️ Vulgarity Detected".
+-If a user sends an image containing NSFW content (like nudity) or violent scenes (like blood or gore), the image is blurred automatically to protect users.
+-If the message or image is safe, it is sent and displayed as-is, unblurred and uncensored.
+---
 ## 🚀 Features
 
 - Real-time messaging powered by **Socket.IO**
@@ -13,7 +18,6 @@
 - Online users tracking
 - Responsive, modern UI built with **React** and **TailwindCSS**
 - Modular architecture separating chat backend and ML moderation service
-- Dockerized deployment ready for cloud hosting (Render, Hugging Face Spaces, Railway)
 
 ---
 
@@ -49,7 +53,7 @@ neatchat/
 └── README.md
 ```
 
-#⚡ Quick Start Guide
+⚡ Quick Start Guide
 1️⃣ Launch the Frontend (React)
 ```bash
 cd client
